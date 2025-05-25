@@ -1,19 +1,16 @@
-// Import the functions you need from the SDKs you need
+
+// src/firebase.js
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAgIN1Rx5QtT4Ou-hOnkyMdy5hlHVH1N-8",
-  authDomain: "portfolio-likes-and-views.firebaseapp.com",
-  projectId: "portfolio-likes-and-views",
-  storageBucket: "portfolio-likes-and-views.firebasestorage.app",
-  messagingSenderId: "798219883938",
-  appId: "1:798219883938:web:0c6a61bc8e039910428efb",
+  apiKey: "AIzaSyAONAOk8BihA9UNWW0SZVVNKe2QA0NrY3Y",
+  authDomain: "protfolio-like-and-views-d3307.firebaseapp.com",
+  projectId: "protfolio-like-and-views-d3307",
+  storageBucket: "protfolio-like-and-views-d3307.firebasestorage.app",
+  messagingSenderId: "429834263029",
+  appId: "1:429834263029:web:0e869d1c05687fe491a8bc",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Initialize Firestore
 export const db = getFirestore(app);
