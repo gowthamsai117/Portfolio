@@ -86,8 +86,8 @@ const Projects = () => {
 
       {/* Header */}
       <div className="relative z-0 text-center mb-10">
-        <p className="text-sm uppercase text-gray-400 mt-11">My Work</p>
-        <h2 className="text-4xl sm:text-5xl font-bold mt-2">Projects.</h2>
+        <p className="text-sm uppercase text-gray-400 mt-10 mb-1">My Work</p>
+        <h2 className="text-4xl sm:text-5xl font-bold ">Projects.</h2>
         <p className="text-base sm:text-lg text-gray-300 mt-4 max-w-2xl">
           These projects showcase my practical skills and experience, each with
           descriptions and links to code repositories and live demos. They

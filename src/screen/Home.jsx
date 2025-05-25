@@ -46,7 +46,7 @@ const Home = () => {
             <span className="animate-blink">|</span>
           </p>
           <p className="text-xl md:text-xl font-text-[#7A1CAC] mt-3">
-            Cybersecurity Enthusiast | Web Pentester | Full Stack<br />
+            <span className='text-xl md:text-xl font-semibold'>Cybersecurity Enthusiast | Web Pentester | Full Stack</span><br />
             <span>Uncovering vulnerabilities to build a safer digital world.</span>
             <br />
             <span>Passionate about </span>
