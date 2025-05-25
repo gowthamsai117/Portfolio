@@ -12,6 +12,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
+    "firebase": "^11.8.1",
     "framer-motion": "^12.12.1",
     "maath": "^0.10.8",
     "react": "^19.0.0",
