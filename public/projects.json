@@ -1,0 +1,23 @@
+[
+  {
+    "title": "GDSC Website",
+    "description": "Welcome to the official repository for the GDSC MJVC Website, built with Next.js, Styled Components, and Prisma! This website serves as the central hub for all things tech-related at GDSC MJVC. From insightful blog posts to incredible community projects, and from exciting events to resources for developers, it’s a one-stop platform for tech enthusiasts.",
+    "image": "src/assets/project1.png",
+    "tags": ["#next.js", "#styled-components", "#three.js"],
+    "githubLink": "https://github.com/your-username/gdsc-website"
+  },
+  {
+    "title": "Netflix Clone",
+    "description": "Netflix-Clone is a fully responsive web application that replicates the popular streaming platform Netflix. It is built using Next.js, Prisma, React, NextAuth.js, Tailwind CSS, MongoDB, and TypeScript. This project aims to showcase the implementation of these technologies to create a seamless streaming experience.",
+    "image": "https://via.placeholder.com/300x200.png?text=Netflix+Clone",
+    "tags": ["#next.js", "#typescript", "#tailwindcss", "#mongodb"],
+    "githubLink": "https://github.com/your-username/netflix-clone"
+  },
+  {
+    "title": "Van-Life",
+    "description": "Vanlife is a user-friendly website built with React that simplifies van searches. It is a web app used to browse different types of vans, allowing users to log in and use convenient tag-based filtering for easy browsing. The app integrates Mirage.js for mock APIs and Firebase Firestore for data storage.",
+    "image": "https://via.placeholder.com/300x200.png?text=Van-Life",
+    "tags": ["#react", "#mirage.js", "#firebase-firestore"],
+    "githubLink": "https://github.com/your-username/van-life"
+  }
+]
