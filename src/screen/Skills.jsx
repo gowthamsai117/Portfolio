@@ -18,6 +18,12 @@
   import three from '../icons/three.webp'
   import StarsCanvas from '../components/StarsCanvas'; // Import the StarsCanvas component
 
+
+
+
+// skills alignment in the center in the mobile mode and make the category in center in mobile mode
+
+
   // Skills data with categories and items
   const skills = [
     {
