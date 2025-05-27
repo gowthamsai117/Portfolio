@@ -141,7 +141,7 @@ const Home = () => {
         </div>
         <div className="w-64 md:w-80 lg:w-96 h-64 md:h-80 lg:h-96 bg-[#AD49E1] rounded-full flex items-center justify-center shadow-lg overflow-hidden">
           <img
-            src={profile}
+            src={profile} // make the image to to glow when the cursor go on to the image 
             alt="Profile"
             className="w-full h-full mt-7 object-cover"
           />
