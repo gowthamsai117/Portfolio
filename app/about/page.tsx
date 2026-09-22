@@ -1,25 +1,6 @@
 import StudioNav from "@/components/StudioNav";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import {ArrowUpRight,Check} from "lucide-react";
 import profile from "../../src/assets/profile.png";
-
-export default function AboutPage() {
-  return (
-    <>
-      <StudioNav />
-      <main className="page-shell">
-        <span className="eyebrow">/ 03 — ABOUT</span>
-        <h1 className="page-title">Developer, builder, <span className="serif">curious by default.</span></h1>
-        <section className="about-preview">
-          <div className="about-image"><Image src={profile} alt="Gowtham" fill sizes="(max-width: 800px) 90vw, 45vw" /></div>
-          <div className="about-copy">
-            <span className="eyebrow">THE PERSON BEHIND THE INTERFACE</span>
-            <p>I enjoy turning complex ideas into clear, engaging digital experiences. My work sits between frontend engineering, interface design, and product thinking.</p>
-            <p>My toolkit includes React, Next.js, TypeScript, JavaScript, Python, APIs, databases, and modern component-driven development.</p>
-            <a className="text-link" href="/contact">Work together <ArrowUpRight size={16} /></a>
-          </div>
-        </section>
-      </main>
-    </>
-  );
-}
+const skills=["React","Next.js","TypeScript","JavaScript","Python","Node.js","Express","MySQL","MongoDB","AWS","Linux","Git"];
+export default function AboutPage(){return <><StudioNav/><main className="page-shell"><span className="eyebrow">/ 03 — ABOUT</span><h1 className="page-title">Developer, builder, <span className="serif">curious by default.</span></h1><section className="about-preview"><div className="about-image-wrap"><div className="about-image"><Image src={profile} alt="Gowtham" fill sizes="(max-width:800px) 90vw,45vw"/><div className="image-label">GOWTHAM · 2026</div></div></div><div className="about-copy"><span className="eyebrow">THE PERSON BEHIND THE INTERFACE</span><p>I enjoy turning complex ideas into clear, engaging digital experiences. My work sits between frontend engineering, interface design, cybersecurity, and product thinking.</p><p>I like shipping real things, learning through difficult problems, and making technical work understandable through strong interfaces.</p><a className="button button-primary" href="/contact">Work together <ArrowUpRight size={15}/></a></div></section><section className="about-block"><div className="section-index"><span>/ 03.1</span><span>TOOLKIT</span></div><div><h2 className="about-block-title">Tools I use to <span className="serif">build.</span></h2><div className="skill-grid">{skills.map(skill=><div className="skill-pill" key={skill}><Check size={13}/>{skill}</div>)}</div></div></section></main></>}
