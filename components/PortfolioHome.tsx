@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowUpRight, Github, Linkedin, Mail, ShieldCheck, Terminal, ScanLine } from "lucide-react";
 import StudioNav from "./StudioNav";
 import ProjectCard from "./ProjectCard";
-import profile from "../src/assets/profile.png";
+import profile from "../src/assets/profile-hero.webp";
 import project1 from "../src/assets/project1.png";
 import project2 from "../src/assets/project2.png";
 import project3 from "../src/assets/project3.jpg";
@@ -43,31 +43,41 @@ export default function PortfolioHome() {
         <div className="security-glow security-glow-b" aria-hidden="true"/>
         <div className="hero-red-disc" aria-hidden="true"/>
         <div className="hero-security-inner">
+          <span className="hero-ghost-bg" aria-hidden="true">SECURITY</span>
           <motion.div className="hero-security-copy" style={{y:heroY,opacity:heroOpacity}}>
             <div className="hero-kicker">HELLO, I&apos;M <strong>GOWTHAM</strong></div>
             <div className="hero-security-title">
-              <span className="hero-ghost">SECURITY</span>
-              <span className="hero-script">Gowtham Sai</span>
               <h1><span>HACK.</span><span>LEARN.</span><em>BUILD.</em></h1>
             </div>
             <p className="hero-security-sub">Turning curiosity into secure solutions.</p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#work">View my work <ArrowUpRight size={16}/></a>
-              <a className="button button-ghost" href="/contact">Let&apos;s connect <ArrowUpRight size={16}/></a>
+              <a className="button button-primary" href="#work">View My Work <ArrowUpRight size={16}/></a>
             </div>
           </motion.div>
+
+          <div className="hero-script" aria-hidden="true">
+            <span>Gowtham</span>
+            <span>Sai</span>
+          </div>
+
           <div className="hero-portrait-wrap">
             <div className="hero-portrait-glow"/>
             <div className="hero-portrait">
-              <Image src={profile} alt="Gowtham" fill priority sizes="(max-width: 800px) 82vw, 54vw"/>
+              <Image src={profile} alt="Gowtham" fill priority sizes="(max-width: 800px) 88vw, 50vw"/>
             </div>
-            <div className="hero-orb-label hero-orb-label-a">ETHICAL<br/>HACKING</div>
-            <div className="hero-orb-label hero-orb-label-b">CYBER<br/>SECURITY</div>
+            <div className="hero-orb-label hero-orb-label-a">ETHICAL HACKING</div>
+            <div className="hero-orb-label hero-orb-label-b">CYBER SECURITY</div>
           </div>
+
           <aside className="hero-note">
-            <div className="hero-note-copy"><strong>Building a safer<br/>digital world through<br/>offensive security.</strong><span className="hero-note-rule"/><a href="/contact">Let&apos;s connect <ArrowUpRight size={15}/></a></div>
-            <div className="hero-sticker"><ShieldCheck size={25}/><span>OPEN<br/>TO<br/>OPPORTUNITIES</span><ArrowUpRight size={15}/></div>
+            <div className="hero-note-copy">
+              <strong>Building a safer<br/>digital world through<br/>offensive security.</strong>
+              <span className="hero-note-rule"/>
+              <a href="/contact">Let&apos;s connect <ArrowUpRight size={15}/></a>
+            </div>
+            <div className="hero-sticker"><span>OPEN<br/>TO<br/>OPPORTUNITIES</span><ArrowUpRight size={15}/></div>
           </aside>
+
           <div className="hero-scroll"><div className="hero-scroll-icon">↓</div><span>SCROLL DOWN</span></div>
         </div>
       </section>
