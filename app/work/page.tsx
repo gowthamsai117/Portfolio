@@ -2,8 +2,10 @@ import StudioNav from "@/components/StudioNav";
 import Image,{StaticImageData} from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import project1 from "../../src/assets/project1.png";
+import project2 from "../../src/assets/project2.png";
 import project3 from "../../src/assets/project3.jpg";
 import project4 from "../../src/assets/project4.png";
+import project5 from "../../src/assets/project5.jpg";
 import project6 from "../../src/assets/project6.png";
 
 type ProjectRow = {
@@ -17,10 +19,12 @@ type ProjectRow = {
 };
 
 const projects: ProjectRow[] = [
-  {n:"01",title:"Fintrack",type:"Product",year:"2026",href:"/work/fintrack",image:project1,stack:"Next.js · TypeScript · Prisma"},
-  {n:"02",title:"Cyber Crew Website",type:"Security",year:"2025",href:"/work/cyber-crew",image:project6,stack:"React · Tailwind · Motion"},
-  {n:"03",title:"Wireless Campus Network",type:"Systems",year:"2024",href:"/work/wireless-campus",image:project3,stack:"CCNA · Cisco · Networking"},
-  {n:"04",title:"File Transfer Tool",type:"Tool",year:"2025",href:"/work/file-transfer",image:project4,stack:"Python · Sockets · Networking"}
+  {n:"01",title:"Vulnerability Web Scanner",type:"Cybersecurity",year:"2025",href:"/work/vulnerability-web-scanner",image:project1,stack:"Python · JSON · Bash · Linux"},
+  {n:"02",title:"Cyber Crew Website",type:"Web Security",year:"2025",href:"/work/cyber-crew",image:project6,stack:"React · Node.js · Tailwind"},
+  {n:"03",title:"Wireless Campus Network",type:"Systems",year:"2024",href:"/work/wireless-campus",image:project3,stack:"Cisco · Packet Tracer · Networking"},
+  {n:"04",title:"Keylogger",type:"Security Research",year:"2025",href:"/work/keylogger",image:project2,stack:"Python · Linux"},
+  {n:"05",title:"File Transfer Tool",type:"Security Tool",year:"2025",href:"/work/file-transfer",image:project4,stack:"Python · UDP · Networking"},
+  {n:"06",title:"Pixel Image Encryption",type:"Cryptography",year:"2025",href:"/work/pixel-image-encryption",image:project5,stack:"Python · HTML · CSS"}
 ];
 
 export default function WorkPage(){
