@@ -43,7 +43,7 @@ export default function StudioNav() {
         {open && (
           <motion.nav className="mobile-menu" initial={{opacity:0,y:-12}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-12}}>
             {links.map(([label,href]) => <a key={href} href={href} onClick={()=>setOpen(false)}>{label}<ArrowUpRight size={18}/></a>)}
-            <a className="mobile-status" href="/contact" onClick={()=>setOpen(false)}>Available for opportunities <ArrowUpRight size={15}/></a>
+            <a className="mobile-status" href="/contact" onClick={()=>setOpen(false)}>Cybersecurity · Software Engineering <ArrowUpRight size={15}/></a>
           </motion.nav>
         )}
       </AnimatePresence>
