@@ -12,10 +12,10 @@ import project4 from "../src/assets/project4.png";
 import project6 from "../src/assets/project6.png";
 
 const projects = [
-  {number:"01",title:"Fintrack",description:"A focused finance product built for clear tracking, useful information, and calm interaction.",category:"Product",year:"2026",image:project1,href:"/work/fintrack",stack:["Next.js","TypeScript","Prisma"]},
-  {number:"02",title:"Cyber Crew",description:"A cybersecurity community platform shaped around events, learning, and a strong digital identity.",category:"Security",year:"2025",image:project6,href:"/work/cyber-crew",stack:["React","Tailwind","Motion"]},
-  {number:"03",title:"Wireless Campus",description:"A campus networking project covering architecture, connectivity, and practical infrastructure.",category:"Network",year:"2024",image:project3,href:"/work/wireless-campus",stack:["CCNA","Cisco","Networking"]},
-  {number:"04",title:"File Transfer Tool",description:"A practical socket-based utility for direct file sharing with a focused workflow.",category:"Security Tool",year:"2025",image:project4,href:"/work/file-transfer",stack:["Python","Sockets","Networking"]}
+  {number:"01",title:"Vulnerability Web Scanner",description:"A Python-based web scanner focused on OWASP Top 10 checks and reconnaissance.",category:"Cybersecurity",year:"2025",image:project1,href:"/work/vulnerability-web-scanner",stack:["Python","Linux","JSON"]},
+  {number:"02",title:"Cyber Crew Website",description:"A cybersecurity community platform for research, events, workshops, and technical content.",category:"Web Security",year:"2025",image:project6,href:"/work/cyber-crew",stack:["React","Node.js","Tailwind"]},
+  {number:"03",title:"Wireless Campus Network",description:"A Cisco Packet Tracer network simulation connecting services and IoT devices across a smart campus.",category:"Networking",year:"2024",image:project3,href:"/work/wireless-campus",stack:["Cisco","Packet Tracer","Networking"]},
+  {number:"04",title:"File Transfer Tool",description:"A UDP-based network utility for fast file sharing between devices.",category:"Security Tool",year:"2025",image:project4,href:"/work/file-transfer",stack:["Python","UDP","Networking"]}
 ];
 
 const services = [
@@ -40,13 +40,13 @@ export default function PortfolioHome() {
         <div className="hero-red-disc" aria-hidden="true"/>
         <div className="hero-security-inner">
           <motion.div className="hero-security-copy" style={{y:heroY,opacity:heroOpacity}}>
-            <div className="hero-status"><span className="hero-status-dot"/> Cybersecurity · Software Engineering <span className="hero-status-line"/></div>
+            <div className="hero-kicker">HELLO, I&apos;M <strong>GOWTHAM</strong></div>
             <div className="hero-security-title">
               <span className="hero-ghost">SECURITY</span>
               <span className="hero-script">Gowtham Sai</span>
               <h1><span>HACK.</span><span>LEARN.</span><em>BUILD.</em></h1>
             </div>
-            <p className="hero-security-sub">Cybersecurity engineer focused on offensive security, secure systems, and modern digital experiences.</p>
+            <p className="hero-security-sub">Turning curiosity into secure solutions.</p>
             <div className="hero-actions">
               <a className="button button-primary" href="#work">View my work <ArrowUpRight size={16}/></a>
               <a className="button button-ghost" href="/contact">Let&apos;s connect <ArrowUpRight size={16}/></a>
