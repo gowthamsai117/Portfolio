@@ -7,15 +7,19 @@ import StudioNav from "./StudioNav";
 import ProjectCard from "./ProjectCard";
 import profile from "../src/assets/profile.png";
 import project1 from "../src/assets/project1.png";
+import project2 from "../src/assets/project2.png";
 import project3 from "../src/assets/project3.jpg";
 import project4 from "../src/assets/project4.png";
+import project5 from "../src/assets/project5.jpg";
 import project6 from "../src/assets/project6.png";
 
 const projects = [
   {number:"01",title:"Vulnerability Web Scanner",description:"A Python-based web scanner focused on OWASP Top 10 checks and reconnaissance.",category:"Cybersecurity",year:"2025",image:project1,href:"/work/vulnerability-web-scanner",stack:["Python","Linux","JSON"]},
   {number:"02",title:"Cyber Crew Website",description:"A cybersecurity community platform for research, events, workshops, and technical content.",category:"Web Security",year:"2025",image:project6,href:"/work/cyber-crew",stack:["React","Node.js","Tailwind"]},
   {number:"03",title:"Wireless Campus Network",description:"A Cisco Packet Tracer network simulation connecting services and IoT devices across a smart campus.",category:"Networking",year:"2024",image:project3,href:"/work/wireless-campus",stack:["Cisco","Packet Tracer","Networking"]},
-  {number:"04",title:"File Transfer Tool",description:"A UDP-based network utility for fast file sharing between devices.",category:"Security Tool",year:"2025",image:project4,href:"/work/file-transfer",stack:["Python","UDP","Networking"]}
+  {number:"04",title:"Keylogger",description:"A Python and Linux security project for keystroke capture and controlled monitoring research.",category:"Security Research",year:"2025",image:project2,href:"/work/keylogger",stack:["Python","Linux"]},
+  {number:"05",title:"File Transfer Tool",description:"A UDP-based network utility for fast file sharing between devices.",category:"Security Tool",year:"2025",image:project4,href:"/work/file-transfer",stack:["Python","UDP","Networking"]},
+  {number:"06",title:"Pixel Image Encryption",description:"An image encryption project using pixel manipulation techniques to protect image data.",category:"Cryptography",year:"2025",image:project5,href:"/work/pixel-image-encryption",stack:["Python","HTML","CSS"]}
 ];
 
 const services = [
