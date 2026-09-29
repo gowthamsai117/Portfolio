@@ -37,9 +37,10 @@ export default function PortfolioHome() {
         <div className="security-grid" aria-hidden="true"/>
         <div className="security-glow security-glow-a" aria-hidden="true"/>
         <div className="security-glow security-glow-b" aria-hidden="true"/>
+        <div className="hero-red-disc" aria-hidden="true"/>
         <div className="hero-security-inner">
           <motion.div className="hero-security-copy" style={{y:heroY,opacity:heroOpacity}}>
-            <div className="hero-status"><span className="hero-status-dot"/> Available for opportunities <span className="hero-status-line"/></div>
+            <div className="hero-status"><span className="hero-status-dot"/> Cybersecurity · Software Engineering <span className="hero-status-line"/></div>
             <div className="hero-security-title">
               <span className="hero-ghost">SECURITY</span>
               <span className="hero-script">Gowtham Sai</span>
