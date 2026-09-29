@@ -76,3 +76,6 @@ button,a{-webkit-tap-highlight-color:transparent}
 .ctf-banner{margin-top:10px}
 @media(max-width:1100px){.hero-red-disc{width:57vw;left:56%;top:17%}.hero-portrait-wrap{width:50vw;right:4%;bottom:-5%}.hero-note{width:300px}.hero-security-copy{width:52vw}.hero-script{left:12%}}
 @media(max-width:800px){.hero-security-copy{width:auto;left:20px;right:20px;bottom:16%}.hero-kicker{font-size:8px}.hero-ghost{top:-82px;font-size:29vw}.hero-script{left:12%;top:26px;font-size:16vw}.hero-security-title h1{margin-top:72px;font-size:21vw}.hero-red-disc{width:108vw;left:51%;top:15%;transform:translateX(-5%)}.hero-portrait-wrap{width:88vw;right:-18vw;bottom:4%}.hero-note{bottom:1.5%;width:100%}.project-grid{display:block}.project-card{margin:0 0 70px!important}.project-meta{min-height:0}}
+
+.record-list{border-top:1px solid var(--line)}.record-list div{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0;border-bottom:1px solid var(--line)}.record-list strong{font-size:17px;letter-spacing:-.02em}.record-list span{font:9px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.security-record{margin-top:0}
+@media(max-width:800px){.record-list div{display:block}.record-list span{display:block;margin-top:6px}}
