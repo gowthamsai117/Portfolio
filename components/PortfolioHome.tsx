@@ -95,8 +95,8 @@ export default function PortfolioHome() {
       <section id="ctf" className="ctf-banner">
         <div className="ctf-glow"/>
         <div className="ctf-icon"><Terminal size={24}/></div>
-        <div><span className="eyebrow">/ 03 — SECURITY PRACTICE</span><h2>CTFs, labs & <span className="serif">offensive security.</span></h2><p>Hands-on practice across web security, network exploitation, reconnaissance, and vulnerability research.</p></div>
-        <a href="/about" className="button button-primary">Explore profile <ArrowUpRight size={16}/></a>
+        <div><span className="eyebrow">/ 03 — SECURITY PRACTICE</span><h2>CTFs, labs & <span className="serif">field practice.</span></h2><p>Hands-on security practice through CTFs, web testing, reconnaissance, network labs, and vulnerability research.</p></div>
+        <a href="/about" className="button button-primary">View security profile <ArrowUpRight size={16}/></a>
       </section>
 
       <section className="security-about">
