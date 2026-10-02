@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { ArrowUpRight, Github, Linkedin, Mail, Terminal, ScanLine } from "lucide-react";
 import StudioNav from "./StudioNav";
 import ProjectCard from "./ProjectCard";
-import profile from "../src/assets/profile-hero.webp";
+import profile from "../src/assets/profile.png";
 import project1 from "../src/assets/project1.png";
 import project2 from "../src/assets/project2.png";
 import project3 from "../src/assets/project3.jpg";
