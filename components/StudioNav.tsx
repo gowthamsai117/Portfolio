@@ -28,7 +28,7 @@ export default function StudioNav() {
         </nav>
       </div>
       <a href="/" className="brand" aria-label="Gowtham home">
-        <span className="brand-mark">G</span><span>GOWTHAM</span>
+        <span>GOWTHAM</span>
       </a>
       <div className="nav-right">
         <div className="social-nav">
