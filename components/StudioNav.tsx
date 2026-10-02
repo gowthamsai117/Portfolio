@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { ArrowUpRight, Menu, X, Github, Linkedin } from "lucide-react";
+import { ArrowUpRight, Menu, X, Github, Linkedin, Mail } from "lucide-react";
 
 const links = [["Home","/"],["Work","/work"],["CTF","/#ctf"],["About","/about"],["Contact","/contact"]];
 
@@ -22,7 +22,6 @@ export default function StudioNav() {
           {links.map(([label,href]) => (
             <a key={href} href={href} className="nav-link">
               <span>{label}</span>
-              {label === "Home" && <i className="nav-active-dot" />}
             </a>
           ))}
         </nav>
@@ -34,7 +33,7 @@ export default function StudioNav() {
         <div className="social-nav">
           <a href="https://github.com/gowthamsai117" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={17}/></a>
           <a href="https://www.linkedin.com/in/gowtham-satya-sai-m" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={17}/></a>
-          <a href="https://x.com/" target="_blank" rel="noreferrer" aria-label="X">𝕏</a>
+          <a href="mailto:gowthamsatyasai123@gmail.com" aria-label="Email"><Mail size={17}/></a>
         </div>
         <a className="nav-talk" href="/contact">Let&apos;s Talk</a>
         <button className="menu-button" onClick={()=>setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open}>{open ? <X size={20}/> : <Menu size={20}/>}</button>
