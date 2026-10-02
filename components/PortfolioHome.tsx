@@ -36,41 +36,40 @@ export default function PortfolioHome() {
     const root = heroRef.current;
     if (!root || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
+    const q = gsap.utils.selector(root);
     const ctx = gsap.context(() => {
-      const q = gsap.utils.selector(root);
+      gsap.set(q(".hero-ghost-bg"), { opacity: 0, x: -70 });
+      gsap.set(q(".hero-portrait-wrap"), { opacity: 0, y: 55, scale: 0.96 });
+      gsap.set(q(".hero-script span"), { opacity: 0, y: 22 });
+      gsap.set(q(".hero-orb-label"), { opacity: 0, scale: 0.82 });
+      gsap.set(q(".hero-security-copy > *"), { opacity: 0, y: 28 });
+      gsap.set(q(".hero-note"), { opacity: 0, x: 35, y: 18 });
+      gsap.set(q(".hero-scroll"), { opacity: 0, y: 12 });
 
-      gsap.set(q(".hero-ghost-bg"), {opacity:0, x:-70});
-      gsap.set(q(".hero-portrait-wrap"), {opacity:0, y:55, scale:.96});
-      gsap.set(q(".hero-script span"), {opacity:0, y:22});
-      gsap.set(q(".hero-orb-label"), {opacity:0, scale:.82});
-      gsap.set(q(".hero-security-copy > *"), {opacity:0, y:28});
-      gsap.set(q(".hero-note"), {opacity:0, x:35, y:18});
-      gsap.set(q(".hero-scroll"), {opacity:0, y:12});
-
-      const intro = gsap.timeline({defaults:{ease:"power3.out"}});
+      const intro = gsap.timeline({ defaults: { ease: "power3.out" } });
       intro
-        .to(q(".hero-ghost-bg"), {opacity:.5, x:0, duration:1.05})
-        .to(q(".hero-portrait-wrap"), {opacity:1, y:0, scale:1, duration:1.15, ease:"power3.out"}, "-=.72")
-        .to(q(".hero-script span"), {opacity:1, y:0, duration:.7, stagger:.14, ease:"power2.out"}, "-=.72")
-        .to(q(".hero-security-copy > *"), {opacity:1, y:0, duration:.62, stagger:.08}, "-=.55")
-        .to(q(".hero-orb-label"), {opacity:1, scale:1, duration:.5, stagger:.1, ease:"back.out(1.7)"}, "-=.42")
-        .to(q(".hero-note"), {opacity:1, x:0, y:0, duration:.7}, "-=.42")
-        .to(q(".hero-scroll"), {opacity:1, y:0, duration:.5}, "-=.3");
+        .to(q(".hero-ghost-bg"), { opacity: 0.5, x: 0, duration: 1.05 })
+        .to(q(".hero-portrait-wrap"), { opacity: 1, y: 0, scale: 1, duration: 1.15 }, "-=.72")
+        .to(q(".hero-script span"), { opacity: 1, y: 0, duration: 0.7, stagger: 0.14, ease: "power2.out" }, "-=.72")
+        .to(q(".hero-security-copy > *"), { opacity: 1, y: 0, duration: 0.62, stagger: 0.08 }, "-=.55")
+        .to(q(".hero-orb-label"), { opacity: 1, scale: 1, duration: 0.5, stagger: 0.1, ease: "back.out(1.7)" }, "-=.42")
+        .to(q(".hero-note"), { opacity: 1, x: 0, y: 0, duration: 0.7 }, "-=.42")
+        .to(q(".hero-scroll"), { opacity: 1, y: 0, duration: 0.5 }, "-=.3");
 
       const portrait = q(".hero-portrait-wrap");
       const script = q(".hero-script");
       const glow = q(".hero-portrait-glow");
 
-      const moveX = gsap.quickTo(portrait, "x", {duration:.7, ease:"power3"});
-      const moveY = gsap.quickTo(portrait, "y", {duration:.7, ease:"power3"});
-      const scriptX = gsap.quickTo(script, "x", {duration:1, ease:"power3"});
-      const scriptY = gsap.quickTo(script, "y", {duration:1, ease:"power3"});
-      const glowX = gsap.quickTo(glow, "x", {duration:1.1, ease:"power3"});
-      const glowY = gsap.quickTo(glow, "y", {duration:1.1, ease:"power3"});
+      const moveX = gsap.quickTo(portrait, "x", { duration: 0.7, ease: "power3" });
+      const moveY = gsap.quickTo(portrait, "y", { duration: 0.7, ease: "power3" });
+      const scriptX = gsap.quickTo(script, "x", { duration: 1, ease: "power3" });
+      const scriptY = gsap.quickTo(script, "y", { duration: 1, ease: "power3" });
+      const glowX = gsap.quickTo(glow, "x", { duration: 1.1, ease: "power3" });
+      const glowY = gsap.quickTo(glow, "y", { duration: 1.1, ease: "power3" });
 
       const onPointer = (event: MouseEvent) => {
-        const x = event.clientX / window.innerWidth - .5;
-        const y = event.clientY / window.innerHeight - .5;
+        const x = event.clientX / window.innerWidth - 0.5;
+        const y = event.clientY / window.innerHeight - 0.5;
         moveX(x * 18);
         moveY(y * 10);
         scriptX(x * -12);
@@ -79,14 +78,30 @@ export default function PortfolioHome() {
         glowY(y * 18);
       };
 
-      window.addEventListener("mousemove", onPointer, {passive:true});
       const onScroll = () => {
         const progress = Math.min(window.scrollY / Math.max(window.innerHeight, 1), 1);
-        gsap.to(q(".hero-portrait-wrap"), {y:progress * -42, duration:.7, overwrite:true, ease:"power2.out"});
-        gsap.to(q(".hero-ghost-bg"), {y:progress * -26, duration:.7, overwrite:true, ease:"power2.out"});
-        gsap.to(q(".hero-script"), {y:progress * -18, duration:.7, overwrite:true, ease:"power2.out"});
+        gsap.to(q(".hero-portrait-wrap"), {
+          y: progress * -42,
+          duration: 0.7,
+          overwrite: true,
+          ease: "power2.out"
+        });
+        gsap.to(q(".hero-ghost-bg"), {
+          y: progress * -26,
+          duration: 0.7,
+          overwrite: true,
+          ease: "power2.out"
+        });
+        gsap.to(q(".hero-script"), {
+          y: progress * -18,
+          duration: 0.7,
+          overwrite: true,
+          ease: "power2.out"
+        });
       };
-      window.addEventListener("scroll", onScroll, {passive:true});
+
+      window.addEventListener("mousemove", onPointer, { passive: true });
+      window.addEventListener("scroll", onScroll, { passive: true });
 
       return () => {
         window.removeEventListener("mousemove", onPointer);
