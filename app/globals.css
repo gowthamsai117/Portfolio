@@ -679,3 +679,58 @@ button,a{-webkit-tap-highlight-color:transparent}
   .hero-orb-label-b{right:3%;top:51%}
   .hero-scroll{display:none}
 }
+
+
+/* Figma HOME 7:2 — navigation precision */
+.site-nav{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:106px;
+  padding:0 7.57vw;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  background:transparent;
+  border:0;
+  backdrop-filter:none;
+}
+.desktop-nav{gap:40px}
+.nav-link{
+  font-family:"Space Grotesk",var(--font-geist),sans-serif;
+  font-size:14px;
+  font-weight:500;
+  line-height:1;
+}
+.nav-active-dot{display:none}
+.brand{
+  font-family:"Space Grotesk",var(--font-geist),sans-serif;
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:.02em;
+}
+.social-nav{gap:12px}
+.social-nav a{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:rgba(255,255,255,.16);
+  box-shadow:none;
+}
+.social-nav a:hover{background:rgba(255,255,255,.28);transform:none}
+.nav-talk{
+  height:40px;
+  padding:0 20px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:22px;
+  background:#050506;
+  color:#fff;
+  font-size:13px;
+  font-weight:500;
+}
+@media(max-width:800px){
+  .site-nav{position:absolute;height:82px;padding:0 20px}
+}
