@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "motion/react";
-import { ArrowUpRight, Github, Linkedin, Mail, ShieldCheck, Terminal, ScanLine } from "lucide-react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ArrowUpRight, Github, Linkedin, Mail, Terminal, ScanLine } from "lucide-react";
 import StudioNav from "./StudioNav";
 import ProjectCard from "./ProjectCard";
 import profile from "../src/assets/profile-hero.webp";
@@ -29,14 +30,77 @@ const services = [
 ];
 
 export default function PortfolioHome() {
-  const {scrollYProgress} = useScroll();
-  const heroY = useTransform(scrollYProgress,[0,.22],[0,-55]);
-  const heroOpacity = useTransform(scrollYProgress,[0,.18],[1,.2]);
+  const heroRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const root = heroRef.current;
+    if (!root || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const ctx = gsap.context(() => {
+      const q = gsap.utils.selector(root);
+
+      gsap.set(q(".hero-ghost-bg"), {opacity:0, x:-70});
+      gsap.set(q(".hero-portrait-wrap"), {opacity:0, y:55, scale:.96});
+      gsap.set(q(".hero-script span"), {opacity:0, y:22});
+      gsap.set(q(".hero-orb-label"), {opacity:0, scale:.82});
+      gsap.set(q(".hero-security-copy > *"), {opacity:0, y:28});
+      gsap.set(q(".hero-note"), {opacity:0, x:35, y:18});
+      gsap.set(q(".hero-scroll"), {opacity:0, y:12});
+
+      const intro = gsap.timeline({defaults:{ease:"power3.out"}});
+      intro
+        .to(q(".hero-ghost-bg"), {opacity:.5, x:0, duration:1.05})
+        .to(q(".hero-portrait-wrap"), {opacity:1, y:0, scale:1, duration:1.15, ease:"power3.out"}, "-=.72")
+        .to(q(".hero-script span"), {opacity:1, y:0, duration:.7, stagger:.14, ease:"power2.out"}, "-=.72")
+        .to(q(".hero-security-copy > *"), {opacity:1, y:0, duration:.62, stagger:.08}, "-=.55")
+        .to(q(".hero-orb-label"), {opacity:1, scale:1, duration:.5, stagger:.1, ease:"back.out(1.7)"}, "-=.42")
+        .to(q(".hero-note"), {opacity:1, x:0, y:0, duration:.7}, "-=.42")
+        .to(q(".hero-scroll"), {opacity:1, y:0, duration:.5}, "-=.3");
+
+      const portrait = q(".hero-portrait-wrap");
+      const script = q(".hero-script");
+      const glow = q(".hero-portrait-glow");
+
+      const moveX = gsap.quickTo(portrait, "x", {duration:.7, ease:"power3"});
+      const moveY = gsap.quickTo(portrait, "y", {duration:.7, ease:"power3"});
+      const scriptX = gsap.quickTo(script, "x", {duration:1, ease:"power3"});
+      const scriptY = gsap.quickTo(script, "y", {duration:1, ease:"power3"});
+      const glowX = gsap.quickTo(glow, "x", {duration:1.1, ease:"power3"});
+      const glowY = gsap.quickTo(glow, "y", {duration:1.1, ease:"power3"});
+
+      const onPointer = (event: MouseEvent) => {
+        const x = event.clientX / window.innerWidth - .5;
+        const y = event.clientY / window.innerHeight - .5;
+        moveX(x * 18);
+        moveY(y * 10);
+        scriptX(x * -12);
+        scriptY(y * -7);
+        glowX(x * 28);
+        glowY(y * 18);
+      };
+
+      window.addEventListener("mousemove", onPointer, {passive:true});
+      const onScroll = () => {
+        const progress = Math.min(window.scrollY / Math.max(window.innerHeight, 1), 1);
+        gsap.to(q(".hero-portrait-wrap"), {y:progress * -42, duration:.7, overwrite:true, ease:"power2.out"});
+        gsap.to(q(".hero-ghost-bg"), {y:progress * -26, duration:.7, overwrite:true, ease:"power2.out"});
+        gsap.to(q(".hero-script"), {y:progress * -18, duration:.7, overwrite:true, ease:"power2.out"});
+      };
+      window.addEventListener("scroll", onScroll, {passive:true});
+
+      return () => {
+        window.removeEventListener("mousemove", onPointer);
+        window.removeEventListener("scroll", onScroll);
+      };
+    }, root);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <main className="security-theme">
       <StudioNav/>
-      <section className="hero-security">
+      <section ref={heroRef} className="hero-security">
         <div className="security-noise" aria-hidden="true"/>
         <div className="security-grid" aria-hidden="true"/>
         <div className="security-glow security-glow-a" aria-hidden="true"/>
@@ -44,16 +108,17 @@ export default function PortfolioHome() {
         <div className="hero-red-disc" aria-hidden="true"/>
         <div className="hero-security-inner">
           <span className="hero-ghost-bg" aria-hidden="true">SECURITY</span>
-          <motion.div className="hero-security-copy" style={{y:heroY,opacity:heroOpacity}}>
+
+          <div className="hero-security-copy">
             <div className="hero-kicker">HELLO, I&apos;M <strong>GOWTHAM</strong></div>
             <div className="hero-security-title">
-              <h1><span>HACK.</span><span>LEARN.</span><em>BUILD.</em></h1>
+              <h1><span>HACK</span><span>LEARN</span><em>BUILD.</em></h1>
             </div>
             <p className="hero-security-sub">Turning curiosity into secure solutions.</p>
             <div className="hero-actions">
               <a className="button button-primary" href="#work">View My Work <ArrowUpRight size={16}/></a>
             </div>
-          </motion.div>
+          </div>
 
           <div className="hero-script" aria-hidden="true">
             <span>Gowtham</span>
@@ -63,10 +128,10 @@ export default function PortfolioHome() {
           <div className="hero-portrait-wrap">
             <div className="hero-portrait-glow"/>
             <div className="hero-portrait">
-              <Image src={profile} alt="Gowtham" fill priority sizes="(max-width: 800px) 88vw, 50vw"/>
+              <Image src={profile} alt="Gowtham" fill priority sizes="(max-width: 800px) 92vw, 66vw"/>
             </div>
-            <div className="hero-orb-label hero-orb-label-a">ETHICAL HACKING</div>
-            <div className="hero-orb-label hero-orb-label-b">CYBER SECURITY</div>
+            <div className="hero-orb-label hero-orb-label-a">Ethical Hacking</div>
+            <div className="hero-orb-label hero-orb-label-b">Cyber Security</div>
           </div>
 
           <aside className="hero-note">
@@ -75,10 +140,10 @@ export default function PortfolioHome() {
               <span className="hero-note-rule"/>
               <a href="/contact">Let&apos;s connect <ArrowUpRight size={15}/></a>
             </div>
-            <div className="hero-sticker"><span>OPEN<br/>TO<br/>OPPORTUNITIES</span><ArrowUpRight size={15}/></div>
+            <div className="hero-sticker"><span>HIRE ME</span><ArrowUpRight size={15}/></div>
           </aside>
 
-          <div className="hero-scroll"><div className="hero-scroll-icon">↓</div><span>SCROLL DOWN</span></div>
+          <div className="hero-scroll"><div className="hero-scroll-icon">⌄</div><span>SCROLL DOWN</span></div>
         </div>
       </section>
 
