@@ -734,3 +734,23 @@ button,a{-webkit-tap-highlight-color:transparent}
 @media(max-width:800px){
   .site-nav{position:absolute;height:82px;padding:0 20px}
 }
+
+
+/* Figma HOME 7:2 — scroll indicator */
+.hero-scroll{
+  bottom:4.4%;
+  gap:2px;
+  color:rgba(255,255,255,.8);
+  font:9px "DM Mono",monospace;
+  letter-spacing:2px;
+}
+.hero-scroll-icon{
+  width:auto;
+  height:auto;
+  border:0;
+  border-radius:0;
+  display:block;
+  font:18px "Space Grotesk",var(--font-geist),sans-serif;
+  line-height:1;
+  padding:0;
+}
